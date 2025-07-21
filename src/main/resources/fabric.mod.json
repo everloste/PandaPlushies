@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "panda_plushies",
+  "version": "${version}",
+  "name": "Panda Plushies (and Friends)",
+  "description": "Adds wonderful plush red pandas and other plush friends to your game.",
+  "authors": [
+    "bebebea_loste"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/panda-plushies",
+    "issues": "",
+    "sources": ""
+  },
+  "license": "MIT",
+  "icon": "assets/panda_plushies/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "dev.bebebea_loste.panda_plushies.client.PandaPlushiesDataGenerator"
+    ],
+    "client": [
+      "dev.bebebea_loste.panda_plushies.client.PandaPlushiesClient"
+    ],
+    "main": [
+      "dev.bebebea_loste.panda_plushies.PandaPlushies"
+    ]
+  },
+  "mixins": [
+    "panda_plushies.mixins.json",
+    {
+      "config": "panda_plushies.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
