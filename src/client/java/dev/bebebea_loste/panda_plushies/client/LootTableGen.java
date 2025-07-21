@@ -16,5 +16,6 @@ public class LootTableGen extends FabricBlockLootTableProvider {
     public void generate() {
         addDrop(Blocks.PANDA_PLUSH);
         addDrop(Blocks.BEE_PLUSH);
+        addDrop(Blocks.RUDOLPH_PLUSH);
     }
 }

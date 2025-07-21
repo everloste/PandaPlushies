@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "panda_plushies:panda_plushie"
+          "name": "panda_plushies:panda_plush"
         }
       ],
       "rolls": 1.0

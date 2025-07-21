@@ -1,33 +1,33 @@
 {
   "variants": {
     "facing=north,sitting=true": {
-      "model": "panda_plushies:block/bee/laying"
+      "model": "panda_plushies:block/rudolph/sitting"
     },
     "facing=east,sitting=true": {
-      "model": "panda_plushies:block/bee/laying",
+      "model": "panda_plushies:block/rudolph/sitting",
       "y": 90
     },
     "facing=south,sitting=true": {
-      "model": "panda_plushies:block/bee/laying",
+      "model": "panda_plushies:block/rudolph/sitting",
       "y": 180
     },
     "facing=west,sitting=true": {
-      "model": "panda_plushies:block/bee/laying",
+      "model": "panda_plushies:block/rudolph/sitting",
       "y": 270
     },
     "facing=north,sitting=false": {
-      "model": "panda_plushies:block/bee/laying"
+      "model": "panda_plushies:block/rudolph/laying"
     },
     "facing=east,sitting=false": {
-      "model": "panda_plushies:block/bee/laying",
+      "model": "panda_plushies:block/rudolph/laying",
       "y": 90
     },
     "facing=south,sitting=false": {
-      "model": "panda_plushies:block/bee/laying",
+      "model": "panda_plushies:block/rudolph/laying",
       "y": 180
     },
     "facing=west,sitting=false": {
-      "model": "panda_plushies:block/bee/laying",
+      "model": "panda_plushies:block/rudolph/laying",
       "y": 270
     }
   }

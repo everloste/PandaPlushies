@@ -1,8 +1,8 @@
 {
-	"item.panda_plushies.panda_plushie": "Red Panda Friend",
-	"block.panda_plushies.panda_plushie": "Red Panda Friend",
-	"item.panda_plushies.panda.tooltip": "§8>w<",
-	"item.panda_plushies.panda.tooltip2": "§8uwu",
-	"tooltip.panda_plushies.owner.craft": "%s's handmade %s",
-	"tooltip.panda_plushies.owner.rename": "%s's %s"
+	"item.panda_plushies.panda_plush": "Plush Red Panda Friend",
+	"block.panda_plushies.panda_plush": "Plush Red Panda Friend",
+	"item.panda_plushies.bee_plush": "Plush Bee Friend",
+	"block.panda_plushies.bee_plush": "Plush Bee Friend",
+	"item.panda_plushies.reindeer_plush": "Plush Reindeer Friend",
+	"block.panda_plushies.reindeer_plush": "Plush Reindeer Friend"
 }
