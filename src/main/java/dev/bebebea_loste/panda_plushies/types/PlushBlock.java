@@ -87,10 +87,10 @@ public class PlushBlock extends HorizontalFacingBlock {
                 pos.getX(),
                 pos.getY(),
                 pos.getZ(),
-                SoundEvent.of(Identifier.of("minecraft", "block.wool.place")),
+                SoundEvent.of(Identifier.of("minecraft", "block.wool.fall")),
                 SoundCategory.BLOCKS,
                 1,
-                1,
+                1.5f,
                 true
         );
 
