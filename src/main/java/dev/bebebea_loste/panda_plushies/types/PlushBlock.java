@@ -7,6 +7,7 @@ import net.minecraft.item.*;
 import net.minecraft.state.*;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.*;
 import net.minecraft.util.shape.*;
@@ -14,6 +15,8 @@ import net.minecraft.world.*;
 import net.minecraft.util.math.Direction;
 import java.util.Objects;
 import net.minecraft.block.SideShapeType;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundCategory;
 
 public class PlushBlock extends HorizontalFacingBlock {
 
@@ -79,6 +82,17 @@ public class PlushBlock extends HorizontalFacingBlock {
         currentState = !currentState;
 
         world.setBlockState(pos, state.with(SITTING, currentState));
+
+        world.playSound(
+                pos.getX(),
+                pos.getY(),
+                pos.getZ(),
+                SoundEvent.of(Identifier.of("minecraft", "block.wool.place")),
+                SoundCategory.BLOCKS,
+                1,
+                1,
+                true
+        );
 
         //return super.onUse(state, world, pos, player, hit);
         return ActionResult.SUCCESS;
