@@ -4,6 +4,7 @@ import com.mojang.serialization.*;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.state.*;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.ActionResult;
@@ -20,83 +21,97 @@ import net.minecraft.sound.SoundCategory;
 
 public class PlushBlock extends HorizontalFacingBlock {
 
-    protected static final VoxelShape SHAPE = Block.createCuboidShape(4.0, 0.0, 4.0, 12.0, 8.0, 12.0);
-    public static final MapCodec<PlushBlock> CODEC = createCodec(PlushBlock::new);
+	protected static final VoxelShape SHAPE = Block.createCuboidShape(4.0, 0.0, 4.0, 12.0, 8.0, 12.0);
+	public static final MapCodec<PlushBlock> CODEC = createCodec(PlushBlock::new);
 
-    public static final BooleanProperty SITTING = BooleanProperty.of("sitting");
+	public static final BooleanProperty SITTING = BooleanProperty.of("sitting");
 
-    public PlushBlock(Settings settings) {
-        super(settings.noCollision().breakInstantly().noBlockBreakParticles().nonOpaque());
-        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(SITTING, true));
-    }
+	public PlushBlock(Settings settings) {
+		super(settings.noCollision().breakInstantly().noBlockBreakParticles().nonOpaque());
+		this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(SITTING, true));
+	}
 
-    @Override
-    protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
-        return CODEC;
-    }
+	@Override
+	protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
+		return CODEC;
+	}
 
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return SHAPE;
-    }
+	public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+		return SHAPE;
+	}
 
-    @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite()).with(SITTING, Objects.requireNonNull(ctx.getPlayer()).isSneaking());
-    }
+	@Override
+	public BlockState getPlacementState(ItemPlacementContext ctx) {
+		return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite()).with(SITTING, Objects.requireNonNull(ctx.getPlayer()).isSneaking());
+	}
 
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
-        builder.add(SITTING);
-    }
+	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+		builder.add(FACING);
+		builder.add(SITTING);
+	}
 
-    // Break if block below is broken
-    @Override
-    protected void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
-        super.neighborUpdate(state, world, pos, sourceBlock, sourcePos, notify);
+	// Break if block below is broken
+	@Override
+	protected void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
+		super.neighborUpdate(state, world, pos, sourceBlock, sourcePos, notify);
 
-        // Break if block below is now air
-        BlockState belowBlockState = world.getBlockState(pos.down());
-        if (belowBlockState.isAir()) {
-            world.breakBlock(pos, true);
-        }
-    }
+		// Break if block below is now air
+		BlockState belowBlockState = world.getBlockState(pos.down());
+		if (belowBlockState.isAir()) {
+			world.breakBlock(pos, true);
+		}
+	}
 
-    // Determine where the plushie can be placed
-    @Override
-    protected boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        // Block below isn't air
-        if (world.getBlockState(pos.down()).isAir()) {
-            return false;
-        }
-        // Block below is solid on its upper side
-        else if (!(world.getBlockState(pos.down()).isSideSolid(world, pos.down(), Direction.UP, SideShapeType.FULL))) {
-            return false;
-        }
-        // --> allow placement
-        return super.canPlaceAt(state, world, pos);
-    }
+	// Determine where the plushie can be placed
+	@Override
+	protected boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+		// Block below isn't air
+		if (world.getBlockState(pos.down()).isAir()) {
+			return false;
+		}
+		// Block below is solid on its upper side
+		else if (!(world.getBlockState(pos.down()).isSideSolid(world, pos.down(), Direction.UP, SideShapeType.FULL))) {
+			return false;
+		}
+		// --> allow placement
+		return super.canPlaceAt(state, world, pos);
+	}
 
-    // Make plushie change between sitting/laying when interacted
-    @Override
-    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+	// Make plushie change between sitting/laying when interacted
+	@Override
+	protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+		Vec3d blockCenter = pos.toCenterPos();
 
-        boolean currentState = state.get(SITTING);
-        currentState = !currentState;
+		world.playSound(
+			blockCenter.getX(),
+			blockCenter.getY(),
+			blockCenter.getZ(),
+			SoundEvent.of(Identifier.of("minecraft", "block.wool.fall")),
+			SoundCategory.BLOCKS,
+			1,
+			1.5f,
+			true
+		);
 
-        world.setBlockState(pos, state.with(SITTING, currentState));
+		if (player.isSneaking()) {
+			world.addParticle(
+				ParticleTypes.HEART,
+				blockCenter.getX(),
+				blockCenter.getY(),
+				blockCenter.getZ(),
+				0,
+				1,
+				0
+			);
+		}
+		else {
+			boolean currentState = state.get(SITTING);
+			currentState = !currentState;
 
-        world.playSound(
-                pos.getX(),
-                pos.getY(),
-                pos.getZ(),
-                SoundEvent.of(Identifier.of("minecraft", "block.wool.fall")),
-                SoundCategory.BLOCKS,
-                1,
-                1.5f,
-                true
-        );
+			world.setBlockState(pos, state.with(SITTING, currentState));
+		}
 
-        //return super.onUse(state, world, pos, player, hit);
-        return ActionResult.SUCCESS;
-    }
+		//return super.onUse(state, world, pos, player, hit);
+		return ActionResult.SUCCESS;
+	}
 }
