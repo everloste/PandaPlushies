@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "www",
+    "baw",
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "minecraft:brown_wool"
+    },
+    "a": {
+      "item": "minecraft:name_tag"
+    },
+    "w": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "result": {
+    "id": "panda_plushies:reindeer_plush",
+    "count": 1
+  }
+}
