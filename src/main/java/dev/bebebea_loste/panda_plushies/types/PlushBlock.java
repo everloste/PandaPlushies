@@ -49,6 +49,7 @@ public class PlushBlock extends HorizontalFacingBlock {
         builder.add(SITTING);
     }
 
+    // Break if block below is broken
     @Override
     protected void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
         super.neighborUpdate(state, world, pos, sourceBlock, sourcePos, notify);
@@ -60,6 +61,7 @@ public class PlushBlock extends HorizontalFacingBlock {
         }
     }
 
+    // Determine where the plushie can be placed
     @Override
     protected boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         // Block below isn't air
