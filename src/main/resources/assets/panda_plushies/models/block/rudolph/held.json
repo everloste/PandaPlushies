@@ -201,8 +201,8 @@
 			"translation": [-4.5, -5, 6]
 		},
 		"firstperson_righthand": {
-			"rotation": [115, 10, -160],
-			"translation": [-2.5, 5, -7.5]
+			"rotation": [100, 5, -170],
+			"translation": [-6.5, 2.5, -7.5]
 		},
 		"ground": {
 			"rotation": [-180, 0, 0],
@@ -210,9 +210,8 @@
 			"scale": [0.5, 0.5, 0.5]
 		},
 		"gui": {
-			"rotation": [135, -15, 150],
-			"translation": [-4, 6.25, 0],
-			"scale": [1.15, 1.15, 1.15]
+			"rotation": [115, -15, 145],
+			"translation": [-3.5, 4, 0]
 		},
 		"head": {
 			"rotation": [50, 0, 0],

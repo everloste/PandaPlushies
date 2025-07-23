@@ -27,7 +27,6 @@
     ]
   },
   "mixins": [
-    "panda_plushies.mixins.json",
     {
       "config": "panda_plushies.client.mixins.json",
       "environment": "client"
