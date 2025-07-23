@@ -20,13 +20,18 @@ public class PandaPlushies implements ModInitializer {
         LootTableEvents.MODIFY.register((key,tableBuilder, source, wrapperLookup) -> {
             if (key.equals(LootTables.VILLAGE_PLAINS_CHEST)) {
                 LootPool.Builder pb = LootPool.builder()
+                        .with(ItemEntry.builder(Blocks.BEE_PLUSH))
+                        .with(ItemEntry.builder(Items.AIR).weight(25));
+                tableBuilder.pool(pb);
+            } else if (key.equals(LootTables.VILLAGE_TAIGA_HOUSE_CHEST)) {
+                LootPool.Builder pb = LootPool.builder()
                         .with(ItemEntry.builder(Blocks.PANDA_PLUSH))
                         .with(ItemEntry.builder(Items.AIR).weight(25));
                 tableBuilder.pool(pb);
-            } else if (key.equals(LootTables.VILLAGE_TAIGA_HOUSE_CHEST) || key.equals(LootTables.VILLAGE_SNOWY_HOUSE_CHEST)) {
+            } else if (key.equals(LootTables.VILLAGE_SNOWY_HOUSE_CHEST)) {
                 LootPool.Builder pb = LootPool.builder()
-                        .with(ItemEntry.builder(Blocks.PANDA_PLUSH).weight(3))
-                        .with(ItemEntry.builder(Items.AIR).weight(50));
+                        .with(ItemEntry.builder(Blocks.RUDOLPH_PLUSH))
+                        .with(ItemEntry.builder(Items.AIR).weight(25));
                 tableBuilder.pool(pb);
             }
         });
