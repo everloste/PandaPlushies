@@ -2,16 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "oow",
+    "www",
     "baw",
-    "bbo"
+    "bbb"
   ],
   "key": {
-    "o": {
-      "item": "minecraft:orange_wool"
-    },
     "b": {
-      "item": "minecraft:black_wool"
+      "item": "minecraft:brown_wool"
     },
     "a": {
       "item": "minecraft:name_tag"
@@ -21,7 +18,7 @@
     }
   },
   "result": {
-    "id": "panda_plushies:panda_plush",
+    "id": "panda_plushies:reindeer_plushie",
     "count": 1
   }
 }

@@ -1,8 +1,8 @@
 {
-	"item.panda_plushies.panda_plush": "Plush Red Panda Friend",
-	"block.panda_plushies.panda_plush": "Plush Red Panda Friend",
-	"item.panda_plushies.bee_plush": "Plush Bee Friend",
-	"block.panda_plushies.bee_plush": "Plush Bee Friend",
-	"item.panda_plushies.reindeer_plush": "Plush Reindeer Friend",
-	"block.panda_plushies.reindeer_plush": "Plush Reindeer Friend"
+	"item.panda_plushies.panda_plushie": "Plush Red Panda Friend",
+	"block.panda_plushies.panda_plushie": "Plush Red Panda Friend",
+	"item.panda_plushies.bee_plushie": "Plush Bee Friend",
+	"block.panda_plushies.bee_plushie": "Plush Bee Friend",
+	"item.panda_plushies.reindeer_plushie": "Plush Reindeer Friend",
+	"block.panda_plushies.reindeer_plushie": "Plush Reindeer Friend"
 }
