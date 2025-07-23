@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "id": "panda_plushies",
   "version": "${version}",
-  "name": "Panda Plushies (and Friends)",
-  "description": "Adds wonderful plush red pandas and other plush friends to your game.",
+  "name": "Panda Plushies! (and Friends)",
+  "description": "Adds cute plush red pandas and other plush friends to your game!",
   "authors": [
     "bebebea_loste"
   ],
   "contact": {
     "homepage": "https://modrinth.com/mod/panda-plushies",
-    "issues": "",
-    "sources": ""
+    "issues": "https://github.com/everloste/PandaPlushies/issues",
+    "sources": "https://github.com/everloste/PandaPlushies"
   },
   "license": "MIT",
   "icon": "assets/panda_plushies/icon.png",
