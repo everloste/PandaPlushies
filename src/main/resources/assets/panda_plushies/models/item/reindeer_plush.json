@@ -1,6 +1,6 @@
 {
 	"format_version": "1.9.0",
 	"credit": "Made by bebebea_loste with Blockbench",
-	"parent": "panda_plushies:block/rudolph/sitting",
+	"parent": "panda_plushies:block/rudolph/held",
 	"ambientocclusion": false
 }

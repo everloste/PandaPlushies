@@ -179,7 +179,7 @@
 	"display": {
 		"thirdperson_righthand": {
 			"rotation": [75, -24, 10],
-			"translation": [-5.5, 0, 8.5]
+			"translation": [-5, 0, 8.5]
 		},
 		"firstperson_righthand": {
 			"rotation": [165, 10, -180],

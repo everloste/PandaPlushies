@@ -170,6 +170,14 @@
 	],
 	"gui_light": "front",
 	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, -24, 10],
+			"translation": [-5, 0, 7.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [155, 25, -180],
+			"translation": [-5, 7.5, -3.5]
+		},
 		"ground": {
 			"translation": [0, 2, 0],
 			"scale": [0.5, 0.5, 0.5]
