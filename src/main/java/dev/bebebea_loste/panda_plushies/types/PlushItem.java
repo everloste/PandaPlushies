@@ -10,16 +10,7 @@ import net.minecraft.util.*;
 public class PlushItem extends BlockItem {
 
     public PlushItem(Block block, Settings settings) {
-        super(block, settings);
+        super(block, settings.rarity(Rarity.EPIC).maxCount(1).maxDamage(0).fireproof());
     }
 
-    public static final Identifier MINING_SPEED_MODIFIER_ID = Identifier.of(PandaPlushies.MOD_ID, "base_attack_damage");
-
-    public static AttributeModifiersComponent createAttributeModifiers() {
-        return AttributeModifiersComponent.builder()
-                .add(EntityAttributes.PLAYER_BLOCK_BREAK_SPEED, new EntityAttributeModifier(MINING_SPEED_MODIFIER_ID, -3.0, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), AttributeModifierSlot.MAINHAND)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(BASE_ATTACK_DAMAGE_MODIFIER_ID, -2.0, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), AttributeModifierSlot.MAINHAND)
-                .build();
-    }
-    
 }
