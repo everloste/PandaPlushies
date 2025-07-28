@@ -18,6 +18,7 @@ import java.util.Objects;
 import net.minecraft.block.SideShapeType;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.world.block.WireOrientation;
 
 public class PlushBlock extends HorizontalFacingBlock {
 
@@ -52,8 +53,8 @@ public class PlushBlock extends HorizontalFacingBlock {
 
 	// Break if block below is broken
 	@Override
-	protected void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
-		super.neighborUpdate(state, world, pos, sourceBlock, sourcePos, notify);
+	protected void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, WireOrientation wireOrientation, boolean notify) {
+		super.neighborUpdate(state, world, pos, sourceBlock, wireOrientation, notify);
 
 		// Break if block below is now air
 		BlockState belowBlockState = world.getBlockState(pos.down());
@@ -82,10 +83,8 @@ public class PlushBlock extends HorizontalFacingBlock {
 	protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
 		Vec3d blockCenter = pos.toCenterPos();
 
-		world.playSound(
-			blockCenter.getX(),
-			blockCenter.getY(),
-			blockCenter.getZ(),
+		world.playSoundAtBlockCenterClient(
+			pos,
 			SoundEvent.of(Identifier.of("minecraft", "block.wool.fall")),
 			SoundCategory.BLOCKS,
 			1,
@@ -94,7 +93,7 @@ public class PlushBlock extends HorizontalFacingBlock {
 		);
 
 		if (player.isSneaking()) {
-			world.addParticle(
+			world.addParticleClient(
 				ParticleTypes.HEART,
 				blockCenter.getX(),
 				blockCenter.getY(),
