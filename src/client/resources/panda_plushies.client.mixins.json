@@ -4,8 +4,6 @@
   "package": "dev.bebebea_loste.panda_plushies.client.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "BipedEntityModelMixin",
-    "PlayerEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
