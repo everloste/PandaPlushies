@@ -7,15 +7,9 @@
     "bbb"
   ],
   "key": {
-    "b": {
-      "item": "minecraft:brown_wool"
-    },
-    "a": {
-      "item": "minecraft:name_tag"
-    },
-    "w": {
-      "item": "minecraft:white_wool"
-    }
+    "b": "minecraft:brown_wool",
+    "a": "minecraft:name_tag",
+    "w": "minecraft:white_wool"
   },
   "result": {
     "id": "panda_plushies:reindeer_plushie",

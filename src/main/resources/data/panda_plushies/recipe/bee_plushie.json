@@ -7,15 +7,9 @@
     "wbw"
   ],
   "key": {
-    "b": {
-      "item": "minecraft:brown_wool"
-    },
-    "a": {
-      "item": "minecraft:name_tag"
-    },
-    "w": {
-      "item": "minecraft:yellow_wool"
-    }
+    "b": "minecraft:brown_wool",
+    "a": "minecraft:name_tag",
+    "w": "minecraft:yellow_wool"
   },
   "result": {
     "id": "panda_plushies:bee_plushie",

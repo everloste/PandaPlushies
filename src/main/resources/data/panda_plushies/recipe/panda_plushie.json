@@ -7,18 +7,10 @@
     "bbo"
   ],
   "key": {
-    "o": {
-      "item": "minecraft:orange_wool"
-    },
-    "b": {
-      "item": "minecraft:black_wool"
-    },
-    "a": {
-      "item": "minecraft:name_tag"
-    },
-    "w": {
-      "item": "minecraft:white_wool"
-    }
+    "o": "minecraft:orange_wool",
+    "b": "minecraft:black_wool",
+    "a": "minecraft:name_tag",
+    "w": "minecraft:white_wool"
   },
   "result": {
     "id": "panda_plushies:panda_plushie",
