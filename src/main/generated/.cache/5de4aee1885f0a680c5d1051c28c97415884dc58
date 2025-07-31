@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-23T16:40:50.3743322	Panda Plushies! (and Friends)/Block Loot Tables
-27b3e762d048e911b55f84e810888d4e23822bbd data\panda_plushies\loot_table\blocks\panda_plushie.json
-c803afe84e98883481c8a4b11e802dcf4af58543 data\panda_plushies\loot_table\blocks\reindeer_plushie.json
-e48377d9a84bf06e9ca22e34a7646ccf1f4f417b data\panda_plushies\loot_table\blocks\bee_plushie.json
+// 1.21.5	-999999999-01-01T00:00:00	Panda Plushies! (and Friends)/Block Loot Tables
+e48377d9a84bf06e9ca22e34a7646ccf1f4f417b data/panda_plushies/loot_table/blocks/bee_plushie.json
+27b3e762d048e911b55f84e810888d4e23822bbd data/panda_plushies/loot_table/blocks/panda_plushie.json
+c803afe84e98883481c8a4b11e802dcf4af58543 data/panda_plushies/loot_table/blocks/reindeer_plushie.json
